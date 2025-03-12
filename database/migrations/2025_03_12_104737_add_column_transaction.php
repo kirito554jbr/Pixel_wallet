@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddForeignkeyToTransactionsTable extends Migration
+class AddColumnTransaction extends Migration
 {
     /**
      * Run the migrations.
@@ -14,9 +14,8 @@ class AddForeignkeyToTransactionsTable extends Migration
     public function up()
     {
         Schema::table('transactions', function (Blueprint $table) {
-            $table->string('receiver_Rib');
-        }); 
-        
+            $table->timestamps();
+        });
     }
 
     /**
@@ -26,10 +25,8 @@ class AddForeignkeyToTransactionsTable extends Migration
      */
     public function down()
     {
-        
         Schema::table('transactions', function (Blueprint $table) {
-            $table->dropColumn('receiver_Rib');
-
-        }); 
+            Schema::dropColumn('timestamps');
+        });
     }
 }

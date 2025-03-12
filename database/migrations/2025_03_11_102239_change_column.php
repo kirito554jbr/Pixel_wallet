@@ -13,10 +13,12 @@ class ChangeColumn extends Migration
      */
     public function up()
     {
-        Schema::table('wallets', function (Blueprint $table) {
-            $table->bigInteger('Rib')->change();
+        Schema::table('transactions', function (Blueprint $table) {
+            Schema::dropColumn('UserDomainName');
+            Schema::dropColumn('UserDomainName');
         });
     }
+
 
     /**
      * Reverse the migrations.

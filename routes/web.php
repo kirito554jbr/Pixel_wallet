@@ -3,6 +3,10 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HelloController;
+use App\Http\Controllers\TransactionController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\WalletController;
+use App\Models\Transaction;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,6 +29,14 @@ Route::get('/register', [AuthController::class, 'register']);
 
 Route::get('/walletTese', [AuthController::class, 'createWallet']);
 
-Route::get('/testTransaction', [AuthController::class, 'create']);
+Route::get('/testTransaction', [TransactionController::class, 'create']);
+
+
+Route::get('/createWallet', [WalletController::class, 'create']);
+
+Route::get('/deleteUser', [UserController::class, 'delete']);
+
+Route::get('/deleteTrans', [TransactionController::class, 'delete']);
+
 
 
