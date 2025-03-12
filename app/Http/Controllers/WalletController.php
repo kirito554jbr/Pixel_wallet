@@ -37,7 +37,12 @@ class WalletController extends Controller
     }
 
     public function update(Request $request){
+
+
         $wallet = Wallet::find($request['id']);
-        $wallet->update($request->all());
+
+        $wallet->Balance += $request["amount"];
+
+        $wallet->update();
     }
 }

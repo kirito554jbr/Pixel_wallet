@@ -80,6 +80,8 @@ class TransactionController extends Controller
     }
 
     public function update(Request $request){
+
+
         $transaction = Transaction::find($request['id']);
         $transaction->update($request->all());
     }
